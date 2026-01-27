@@ -20,6 +20,9 @@ struct BIT {
         for (; x > 0; x -= lb(x)) ret += bit[x];
         return ret;
     }
+    int query(int l, int r) {
+        return query(r) - query(l - 1);
+    }
     // use freq array to build
     // find min x s.t. freq[1..x] <= k
     // kth element when sorted

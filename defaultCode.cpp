@@ -1,5 +1,4 @@
 #include<bits/stdc++.h>
-// #define int long long
 #define ff first
 #define ss second
 #define X first
