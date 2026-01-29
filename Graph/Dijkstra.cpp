@@ -1,3 +1,4 @@
+// O(V + E log E)
 void dijkstra(int n, vector<vector<pair<int, int>>> &adj) {
     vector<int> dist(n, INF);
     dist[0] = 0;
