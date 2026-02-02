@@ -14,3 +14,12 @@ map<int, int, decltype(cmp)> mp(cmp);
 nth_element(v.begin(), v.begin() + k, v.end());  // O(n)
 // v[0..k) sorted and are the smallest k elements
 partial_sort(v.begin(), v.begin() + k, v.end()); // O(nlogk)
+int sum = accumulate(v.begin(), v.end(), 0);
+fill(v.begin(), v.end(), 0);
+fill_n(v.begin(), n, 0);
+// prefix sum, suffix use rbegin()
+partial_sum(v.begin(), v.end(), v.begin());
+// adjacent difference, v[i] = v[i] - v[i-1]
+adjacent_difference(v.begin(), v.end(), v.begin());
+// rotate left by k, right use rbegin()
+rotate(v.begin(), v.begin() + k, v.end());
