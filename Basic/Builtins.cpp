@@ -4,8 +4,13 @@ T gcd(T a, T b);
 T lcm(T a, T b);                // cast to ll first
 iota(v.begin(), v.end(), 1);    // fill v, start from 1
 do { } while (next_permutation(v.begin(), v.end()));
+T mx = numeric_limits<T>::max(); // also min() *float: smallest positive
 
 auto cmp = [&](const auto &a, const auto &b) { return a < b; };
+// both return end() if not found
+upper_bound(v.begin(), v.end(), x, cmp);  // smallest it > x
+lower_bound(v.begin(), v.end(), x, cmp);  // smallest it >= x
+binary_search(v.begin(), v.end(), x, cmp); // return if found (bool)
 priorty_queue<int, vector<int>, decltype(cmp)> pq(cmp);
 set<int, decltype(cmp)> st(cmp);
 map<int, int, decltype(cmp)> mp(cmp);
